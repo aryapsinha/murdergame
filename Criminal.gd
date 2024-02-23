@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 500
+@export var speed = 200
 @export var angular_speed := 5.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -42,7 +42,7 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 	
-	move_and_slide()
+	move_and_slide() #necessary to check for the collision at every time
 	
 	
 	
