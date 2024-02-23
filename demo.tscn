@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgleo04pid86j"]
+[gd_scene load_steps=9 format=3 uid="uid://bgleo04pid86j"]
 
 [ext_resource type="Texture2D" uid="uid://cjj2mv24i23pa" path="res://Package/Tileset_Large.png" id="1_4dseu"]
+[ext_resource type="Script" path="res://demo.gd" id="1_klwaf"]
 [ext_resource type="PackedScene" uid="uid://d0kp11t3gus2w" path="res://criminal.tscn" id="1_p1xug"]
 [ext_resource type="Texture2D" uid="uid://b3ms8irunc662" path="res://Package/Map_Example.png" id="2_7f3l3"]
+[ext_resource type="PackedScene" uid="uid://d108c1aieg57l" path="res://people.tscn" id="5_naf7n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujuwj"]
 texture = ExtResource("1_4dseu")
@@ -2140,12 +2142,16 @@ sources/0 = SubResource("TileSetAtlasSource_ujuwj")
 sources/1 = SubResource("TileSetAtlasSource_uim6q")
 
 [node name="Demo" type="Node2D"]
+script = ExtResource("1_klwaf")
 
 [node name="Criminal" parent="." instance=ExtResource("1_p1xug")]
-z_index = 1
+z_index = 2
+position = Vector2(1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="Criminal"]
 zoom = Vector2(3, 3)
+
+[node name="People" parent="." instance=ExtResource("5_naf7n")]
 
 [node name="Level0" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qviwi")

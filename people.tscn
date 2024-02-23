@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d108c1aieg57l"]
+
+[ext_resource type="Texture2D" uid="uid://ccd42m37c0dsl" path="res://replace_art/pplwalk_1.png" id="1_lstjr"]
+[ext_resource type="Script" path="res://people.gd" id="1_moal1"]
+[ext_resource type="Texture2D" uid="uid://bpig6210bqlan" path="res://replace_art/pplwalk_2.png" id="2_ny2ej"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_df35v"]
+radius = 59.0
+height = 130.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56kkw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lstjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ny2ej")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="People" type="Area2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_moal1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(66, -21)
+shape = SubResource("CapsuleShape2D_df35v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(26, -19)
+sprite_frames = SubResource("SpriteFrames_56kkw")
