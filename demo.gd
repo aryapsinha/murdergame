@@ -3,9 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	 # Replace with function body.
 	var numPeople = randi() % 4 + 1
-	
+	$Criminal/MainCam.make_current() #Change this if a start scene is added
 	for i in numPeople:
 		var enemy_scene_copy = enemy_scene.instantiate()
 		var x = randi() % 150 + 50
@@ -13,9 +13,12 @@ func _ready():
 		var y = randi()% 100 - 100
 		print(y)
 		enemy_scene_copy.position = Vector2(x, y)
+		#var hud = $EndScreen.new()
+		#enemy_scene_copy.connect("gameover", hud._on_people_gameover())
 		add_child(enemy_scene_copy)
 		print("hello")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+

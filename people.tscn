@@ -4,9 +4,8 @@
 [ext_resource type="Script" path="res://people.gd" id="1_moal1"]
 [ext_resource type="Texture2D" uid="uid://bpig6210bqlan" path="res://replace_art/pplwalk_2.png" id="2_ny2ej"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_df35v"]
-radius = 59.0
-height = 130.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dl7f"]
+size = Vector2(173.333, 133.333)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_56kkw"]
 animations = [{
@@ -24,14 +23,15 @@ animations = [{
 
 [node name="People" type="Area2D"]
 scale = Vector2(0.3, 0.3)
+collision_layer = 2
 script = ExtResource("1_moal1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(66, -21)
-shape = SubResource("CapsuleShape2D_df35v")
+position = Vector2(186.667, -60)
+shape = SubResource("RectangleShape2D_4dl7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(26, -19)
+position = Vector2(186.667, -60)
 sprite_frames = SubResource("SpriteFrames_56kkw")
 
 [node name="WalkTime" type="Timer" parent="."]
