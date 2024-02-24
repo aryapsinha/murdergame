@@ -1,12 +1,14 @@
 extends Node2D
 @onready var enemy_scene = preload("res://people.tscn")
-
+@onready var timeLabel = $Criminal/Timer/TimeLabel
+@onready var timer = $Criminal/Timer/Timer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	 # Replace with function body.
 	#$SubViewportContainer/EndScreen/LabelVis/Label.show()
 	#$SubViewportContainer/EndScreen._on_people_gameover()
-	
+	timeLabel.show()
+	timer.start()
 	var numPeople = randi() % 4 + 1
 	$Criminal/MainCam.make_current() #Change this if a start scene is added
 	for i in numPeople:
@@ -23,5 +25,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	timeLabel.text = "%02d:%02d" % three_min()
 
+func three_min():
+	var time_left = timer.time_left
+	var minute = floor(time_left /60)
+	var second = int(time_left) % 60 
+	return [minute, second]

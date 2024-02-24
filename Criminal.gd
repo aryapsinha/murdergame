@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 200
 @export var angular_speed := 5.0
-
+var armed = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 0#ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -46,3 +46,5 @@ func _physics_process(_delta: float) -> void:
 	
 	
 	
+func weapon():
+	armed = true

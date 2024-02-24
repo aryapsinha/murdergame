@@ -2154,6 +2154,76 @@ position = Vector2(300, 275)
 [node name="MainCam" type="Camera2D" parent="Criminal"]
 zoom = Vector2(3, 3)
 
+[node name="Timer" type="ColorRect" parent="Criminal"]
+offset_left = -272.857
+offset_top = -154.286
+offset_right = -123.857
+offset_bottom = -114.286
+color = Color(0.6, 0.286275, 0.415686, 1)
+
+[node name="TimeLabel" type="Label" parent="Criminal/Timer"]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503
+anchor_top = 0.5
+anchor_right = 0.503
+anchor_bottom = 0.5
+offset_left = -63.5184
+offset_top = -14.2857
+offset_right = 63.4816
+offset_bottom = 14.7143
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="Criminal/Timer"]
+wait_time = 180.0
+
+[node name="Notes" type="ColorRect" parent="Criminal"]
+offset_left = 145.714
+offset_top = -154.286
+offset_right = 273.714
+offset_bottom = -37.2857
+color = Color(0.6, 0.286275, 0.415686, 1)
+
+[node name="Objective" type="Label" parent="Criminal/Notes"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.125
+anchor_right = 0.5
+anchor_bottom = 0.125
+offset_left = -42.5714
+offset_top = -11.7679
+offset_right = 42.4286
+offset_bottom = 11.2321
+text = "Objectives:"
+horizontal_alignment = 1
+
+[node name="KnifeLabel" type="Label" parent="Criminal/Notes"]
+layout_mode = 0
+offset_left = 14.2857
+offset_top = 27.1429
+offset_right = 118.286
+offset_bottom = 50.1429
+text = "Acquire Knife"
+autowrap_mode = 2
+
+[node name="CameraLabel" type="Label" parent="Criminal/Notes"]
+layout_mode = 0
+offset_top = 51.4286
+offset_right = 128.0
+offset_bottom = 74.4286
+text = "Disarm Cameras"
+autowrap_mode = 2
+
+[node name="PeopleLabel" type="Label" parent="Criminal/Notes"]
+layout_mode = 0
+offset_left = 12.8571
+offset_top = 78.5714
+offset_right = 118.857
+offset_bottom = 101.571
+text = "Kill Witnesses"
+
 [node name="People" parent="." instance=ExtResource("5_naf7n")]
 visible = false
 position = Vector2(-296, 70)
