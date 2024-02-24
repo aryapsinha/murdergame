@@ -3,9 +3,9 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	$YouLose.hide()
-	$Reason.hide() # Replace with function body.
+	$LabelVis/Label.show()
+	$LabelVis/YouLose.hide()
+	$LabelVis/Reason.hide() # Replace with function body.
 	print("read")
 	#$People.gameover.connect("_on_people_gameover")
 
@@ -16,7 +16,7 @@ func _process(delta):
 
 func _on_people_gameover():
 	print("okayok")
-	$YouLose.visible = true
-	$Reason.show()
+	$LabelVis/YouLose.visible = true
+	$LabelVis/Reason.show()
 	$HUDCam.make_current()
 	 # Replace with function body.
