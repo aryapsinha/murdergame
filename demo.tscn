@@ -2173,6 +2173,7 @@ offset_left = -63.5184
 offset_top = -14.2857
 offset_right = 63.4816
 offset_bottom = 14.7143
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="Criminal/Timer"]
@@ -2240,7 +2241,6 @@ layer_1/tile_data = PackedInt32Array(-327691, 589824, 5, -262155, 589824, 6, -13
 
 [node name="EndScreen" type="CanvasLayer" parent="." groups=["HUD"]]
 layer = 3
-visible = false
 script = ExtResource("6_emjmo")
 
 [node name="LabelVis" type="Node2D" parent="EndScreen"]
@@ -2307,3 +2307,5 @@ position = Vector2(280, 168)
 [node name="Weapon" parent="." instance=ExtResource("7_vmmw6")]
 position = Vector2(113, 216)
 scale = Vector2(0.15, 0.15)
+
+[connection signal="timeout" from="Criminal/Timer/Timer" to="." method="_on_timer_timeout"]

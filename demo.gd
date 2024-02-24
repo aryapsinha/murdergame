@@ -9,6 +9,7 @@ func _ready():
 	#$SubViewportContainer/EndScreen._on_people_gameover()
 	timeLabel.show()
 	timer.start()
+	
 	var numPeople = randi() % 4 + 1
 	$Criminal/MainCam.make_current() #Change this if a start scene is added
 	for i in numPeople:
@@ -32,3 +33,9 @@ func three_min():
 	var minute = floor(time_left /60)
 	var second = int(time_left) % 60 
 	return [minute, second]
+
+
+
+func _on_timer_timeout():
+	$Criminal.hide()
+	get_tree().call_group("HUD", "_on_people_gameover") # Replace with function body.

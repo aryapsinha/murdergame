@@ -13,4 +13,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Criminal":
-		hide()# Replace with function body.
+		$CollisionShape2D.set_deferred("disabled", true)
+		hide()
+		get_tree().call_group("MainChar", "weapon")# Replace with function body.

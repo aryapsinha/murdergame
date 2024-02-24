@@ -48,3 +48,6 @@ func _physics_process(_delta: float) -> void:
 	
 func weapon():
 	armed = true
+	print("WEAPON")
+	var green = Color(0.0,1.0,0.0,1.0)
+	$Notes/KnifeLabel.set("theme_override_colors/font_color", green)
