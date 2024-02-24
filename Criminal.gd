@@ -42,9 +42,18 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
 	
+	if Input.is_action_pressed("kill"):
+		if(armed):
+			#print("legal")
+			get_tree().call_group("People", "on_attack")
+			
+		#else:
+			#print("illegal")
+	
 	move_and_slide() #necessary to check for the collision at every time
 	
 	
+
 	
 func weapon():
 	armed = true

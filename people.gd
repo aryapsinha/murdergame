@@ -2,6 +2,7 @@ extends Area2D
 @export var enemy_scene: PackedScene
 var entered = 0; 
 var dir = -1
+var attack = false
 signal gameover
 
 # Called when the node enters the scene tree for the first time.
@@ -17,8 +18,12 @@ func _process(delta):
 func _on_body_entered(body):
 	#print("entered")
 	
+	if(body.name == "Criminal" and attack == true):
+		hide()
+		$CollisionShape2D.set_deferred("disabled", true)
+		print("ATTACKED!")
 	
-	if(body.name == "Criminal"):
+	elif(body.name == "Criminal" and attack == false):
 		body.hide()
 		$CollisionShape2D.set_deferred("disabled", true)
 		get_tree().call_group("HUD", "_on_people_gameover")
@@ -39,3 +44,9 @@ func _on_walk_time_timeout():
 	$WalkTime.start() # Replace with function body.
 
 
+func on_attack():
+	attack = true
+	$AttackWindow.start()
+
+func _on_attack_window_timeout():
+	attack = false # Replace with function body.

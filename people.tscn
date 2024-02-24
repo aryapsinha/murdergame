@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bpig6210bqlan" path="res://replace_art/pplwalk_2.png" id="2_ny2ej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dl7f"]
-size = Vector2(173.333, 133.333)
+size = Vector2(176.667, 133.333)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_56kkw"]
 animations = [{
@@ -21,23 +21,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="People" type="Area2D"]
+[node name="People" type="Area2D" groups=["People"]]
 scale = Vector2(0.3, 0.3)
 collision_layer = 2
 collision_mask = 17
 script = ExtResource("1_moal1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(186.667, -60)
+position = Vector2(185, -60)
 shape = SubResource("RectangleShape2D_4dl7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(186.667, -60)
+position = Vector2(185.5, -59.8333)
+scale = Vector2(1.01282, 0.997512)
 sprite_frames = SubResource("SpriteFrames_56kkw")
 
 [node name="WalkTime" type="Timer" parent="."]
 wait_time = 1.5
 
+[node name="AttackWindow" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="WalkTime" to="." method="_on_walk_time_timeout"]
+[connection signal="timeout" from="AttackWindow" to="." method="_on_attack_window_timeout"]
