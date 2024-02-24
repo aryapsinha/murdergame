@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bghqydkdn1lro"]
+[gd_scene load_steps=6 format=3 uid="uid://bghqydkdn1lro"]
 
 [ext_resource type="Texture2D" uid="uid://xsowb4r7pi8d" path="res://replace_art/camera.png" id="1_bdkrx"]
 [ext_resource type="Script" path="res://camera.gd" id="1_rycwy"]
+[ext_resource type="Texture2D" uid="uid://bxuv7lpyro6al" path="res://replace_art/disabledcam.png" id="3_8sugn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nslym"]
 size = Vector2(90, 135)
@@ -16,7 +17,10 @@ animations = [{
 "name": &"active",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8sugn")
+}],
 "loop": true,
 "name": &"disabled",
 "speed": 5.0
@@ -36,7 +40,7 @@ shape = SubResource("RectangleShape2D_nslym")
 position = Vector2(1, 3)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_snf25")
-animation = &"active"
+animation = &"disabled"
 
 [node name="TamperWindow" type="Timer" parent="."]
 

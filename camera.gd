@@ -12,9 +12,9 @@ func _ready():
 func _process(delta):
 	
 	if overlaps_body(body1) and tamper == true: 
-		hide()
+		
 		$CollisionShape2D.set_deferred("disabled", true)
-		hide()
+		$AnimatedSprite2D.animation = "disabled"
 		get_tree().call_group("Demo", "disabled")
 		tamper = false 
 	
@@ -22,7 +22,7 @@ func _process(delta):
 func on_disable():
 	tamper = true
 	#print(tamper)
-	#$TamperWindow.start()
+	$TamperWindow.start()
 	
 		
 	
@@ -47,4 +47,4 @@ func _on_body_entered(body):
 
 func _on_tamper_window_timeout():
 	tamper = false
-	print("tampertimeot") # Replace with function body.
+	#print("tampertimeot") # Replace with function body.
