@@ -42,7 +42,7 @@ func _on_body_exited(body):
 func _on_walk_time_timeout():
 	dir = dir * -1
 	$AnimatedSprite2D.flip_h = dir > 0
-	get_tree().call_group("MainChar", "resetAnimation")
+	
 	$WalkTime.start() # Replace with function body.
 
 
@@ -51,4 +51,5 @@ func on_attack():
 	$AttackWindow.start()
 
 func _on_attack_window_timeout():
-	attack = false # Replace with function body.
+	attack = false
+	get_tree().call_group("MainChar", "resetAnimation") # Replace with function body.

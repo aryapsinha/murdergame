@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bghqydkdn1lro"]
+
+[ext_resource type="Texture2D" uid="uid://xsowb4r7pi8d" path="res://replace_art/camera.png" id="1_bdkrx"]
+[ext_resource type="Script" path="res://camera.gd" id="1_rycwy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nslym"]
+size = Vector2(90, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_snf25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bdkrx")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"disabled",
+"speed": 5.0
+}]
+
+[node name="Camera" type="Area2D" groups=["Camera"]]
+z_index = 1
+scale = Vector2(0.3, 0.3)
+collision_layer = 8
+script = ExtResource("1_rycwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_nslym")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 3)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_snf25")
+animation = &"active"
+
+[node name="TamperWindow" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TamperWindow" to="." method="_on_tamper_window_timeout"]

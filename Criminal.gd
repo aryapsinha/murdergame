@@ -54,7 +54,9 @@ func _physics_process(_delta: float) -> void:
 			$AnimatedSprite2D.animation = "kill"
 			$AnimatedSprite2D.flip_h = (dir == -1)
 			get_tree().call_group("People", "on_attack")
-			
+	if Input.is_action_pressed("disable"):
+		
+		get_tree().call_group("Camera", "on_disable")
 		#else:
 			#print("illegal")
 	
@@ -62,11 +64,15 @@ func _physics_process(_delta: float) -> void:
 	
 func resetAnimation():
 	$AnimatedSprite2D.animation = "walk"
-	print("reset animation called")
+	
 func killAll():
 	var green = Color(0.0,1.0,0.0,1.0)
 	$Notes/PeopleLabel.set("theme_override_colors/font_color", green)
 	print("killAll called")
+func disableAll(): 
+	var green = Color(0.0,1.0,0.0,1.0)
+	$Notes/CameraLabel.set("theme_override_colors/font_color", green)
+	print("disableAll called")
 func weapon():
 	armed = true
 	print("WEAPON")
