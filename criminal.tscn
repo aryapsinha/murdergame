@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0kp11t3gus2w"]
+[gd_scene load_steps=9 format=3 uid="uid://d0kp11t3gus2w"]
 
 [ext_resource type="Script" path="res://Criminal.gd" id="1_4w0t2"]
+[ext_resource type="Texture2D" uid="uid://bluc1iqq6pyuc" path="res://replace_art/smallknifeout.png" id="2_eymrl"]
 [ext_resource type="Texture2D" uid="uid://blvenfekjvl4r" path="res://replace_art/playerGrey_up1.png" id="2_pw70i"]
 [ext_resource type="Texture2D" uid="uid://dl3mm33gt1513" path="res://replace_art/playerGrey_up2.png" id="3_6yxnw"]
 [ext_resource type="Texture2D" uid="uid://8qyimxtqpr2k" path="res://replace_art/playerGrey_walk1.png" id="4_sd1cx"]
@@ -8,6 +9,14 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_64lcv"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eymrl")
+}],
+"loop": true,
+"name": &"kill",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_pw70i")
@@ -43,7 +52,7 @@ script = ExtResource("1_4w0t2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_64lcv")
-animation = &"up"
+animation = &"kill"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)

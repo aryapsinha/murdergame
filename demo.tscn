@@ -2144,7 +2144,7 @@ physics_layer_0/collision_mask = 15
 sources/0 = SubResource("TileSetAtlasSource_ujuwj")
 sources/1 = SubResource("TileSetAtlasSource_uim6q")
 
-[node name="Demo" type="Node2D"]
+[node name="Demo" type="Node2D" groups=["Demo"]]
 script = ExtResource("1_klwaf")
 
 [node name="Criminal" parent="." instance=ExtResource("1_p1xug")]

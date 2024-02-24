@@ -21,6 +21,7 @@ func _on_body_entered(body):
 	if(body.name == "Criminal" and attack == true):
 		hide()
 		$CollisionShape2D.set_deferred("disabled", true)
+		get_tree().call_group("Demo", "killed")
 		print("ATTACKED!")
 	
 	elif(body.name == "Criminal" and attack == false):
@@ -41,6 +42,7 @@ func _on_body_exited(body):
 func _on_walk_time_timeout():
 	dir = dir * -1
 	$AnimatedSprite2D.flip_h = dir > 0
+	get_tree().call_group("MainChar", "resetAnimation")
 	$WalkTime.start() # Replace with function body.
 
 

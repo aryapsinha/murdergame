@@ -2,6 +2,9 @@ extends Node2D
 @onready var enemy_scene = preload("res://people.tscn")
 @onready var timeLabel = $Criminal/Timer/TimeLabel
 @onready var timer = $Criminal/Timer/Timer
+@onready var killcount = 0
+var numPeople = 0
+@onready var objectives = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	 # Replace with function body.
@@ -9,8 +12,9 @@ func _ready():
 	#$SubViewportContainer/EndScreen._on_people_gameover()
 	timeLabel.show()
 	timer.start()
-	
-	var numPeople = randi() % 4 + 1
+	$Criminal/AnimatedSprite2D.animation = "walk"
+	numPeople = randi() % 4 + 1
+	print(numPeople)
 	$Criminal/MainCam.make_current() #Change this if a start scene is added
 	for i in numPeople:
 		var enemy_scene_copy = enemy_scene.instantiate()
@@ -35,7 +39,12 @@ func three_min():
 	return [minute, second]
 
 
-
+func killed():
+	killcount = killcount + 1
+	print(killcount)
+	if(killcount == numPeople):
+		print("truth")
+		get_tree().call_group("MainChar", "killAll")
 func _on_timer_timeout():
 	$Criminal.hide()
 	get_tree().call_group("HUD", "_on_people_gameover") # Replace with function body.

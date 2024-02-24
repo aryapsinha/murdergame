@@ -5,12 +5,13 @@ extends CharacterBody2D
 var armed = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 0#ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var dir = -1
 
 func _physics_process(_delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity.y += gravity * delta
+		
 	var direction := Vector2(
 		# This first line calculates the X direction, the vector's first component.
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
@@ -38,13 +39,20 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite2D.flip_v = false
 		# See the note below about boolean assignment.
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+		if(velocity.x > 0):
+			dir = 1
+		elif(velocity.x < 0):
+			dir = -1 
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = velocity.y > 0
+		
+
 	
 	if Input.is_action_pressed("kill"):
 		if(armed):
-			#print("legal")
+			$AnimatedSprite2D.animation = "kill"
+			$AnimatedSprite2D.flip_h = (dir == -1)
 			get_tree().call_group("People", "on_attack")
 			
 		#else:
@@ -52,9 +60,13 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide() #necessary to check for the collision at every time
 	
-	
-
-	
+func resetAnimation():
+	$AnimatedSprite2D.animation = "walk"
+	print("reset animation called")
+func killAll():
+	var green = Color(0.0,1.0,0.0,1.0)
+	$Notes/PeopleLabel.set("theme_override_colors/font_color", green)
+	print("killAll called")
 func weapon():
 	armed = true
 	print("WEAPON")
