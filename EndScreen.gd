@@ -21,5 +21,6 @@ func _on_people_gameover():
 	get_tree().call_group("People", "reset")
 	get_tree().call_group("Camera", "reset")
 	show()
+	$TryAgain.hide()
 	$HUDCam.make_current()
 	 # Replace with function body.

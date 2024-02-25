@@ -37,6 +37,8 @@ func three_min():
 
 func win(): 
 	$WinScreen.show()
+	print("called")
+	$PlayAgain.hide()
 
 func killed():
 	killcount = killcount + 1
@@ -54,6 +56,11 @@ func _on_timer_timeout():
 	get_tree().call_group("HUD", "_on_people_gameover") 
 
 func game_start():
+	
+	
+	
+	
+	
 	$Criminal.show()
 	$WinScreen.hide()
 	$Level0.show()
