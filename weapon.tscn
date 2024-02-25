@@ -12,12 +12,12 @@ collision_layer = 4
 script = ExtResource("1_37psi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(254, 202)
+position = Vector2(3.05176e-05, 0)
 scale = Vector2(0.132334, 0.176662)
 texture = ExtResource("1_8nkrx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(252.75, 200.625)
+position = Vector2(7.62939e-06, 3.05176e-05)
 shape = SubResource("RectangleShape2D_mwtwa")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
