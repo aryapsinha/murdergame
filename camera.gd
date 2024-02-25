@@ -25,7 +25,9 @@ func on_disable():
 	$TamperWindow.start()
 	
 		
-	
+func reset():
+	$AnimatedSprite2D.animation = "active"
+	hide()
 	#$AnimatedSprite2D.animation = "disabled" -- do this once i make a disabled animation
 	#hide()
 func _on_body_entered(body):

@@ -33,7 +33,10 @@ func _on_body_entered(body):
 		#emit game over signal
 		#Replace with function body.
 	
-
+func reset():
+	hide()
+	attack = false 
+	
 
 func _on_body_exited(body):
 	pass#print("exited") # Replace with function body.

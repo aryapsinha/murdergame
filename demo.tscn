@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgleo04pid86j"]
+[gd_scene load_steps=16 format=3 uid="uid://bgleo04pid86j"]
 
 [ext_resource type="Texture2D" uid="uid://cjj2mv24i23pa" path="res://Package/Tileset_Large.png" id="1_4dseu"]
 [ext_resource type="Script" path="res://demo.gd" id="1_klwaf"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bghqydkdn1lro" path="res://camera.tscn" id="3_rj3pp"]
 [ext_resource type="PackedScene" uid="uid://d108c1aieg57l" path="res://people.tscn" id="5_naf7n"]
 [ext_resource type="Script" path="res://EndScreen.gd" id="6_emjmo"]
+[ext_resource type="Texture2D" uid="uid://f4qcwqr4nhfe" path="res://final_art/housebackground.png" id="7_2408w"]
 [ext_resource type="PackedScene" uid="uid://blttohs38nnv" path="res://weapon.tscn" id="7_vmmw6"]
+[ext_resource type="FontFile" uid="uid://c80ii00bbc471" path="res://fonts/lunchtime-doubly-so/lunchds.ttf" id="8_tji2t"]
+[ext_resource type="FontFile" uid="uid://4kqw3jm2qe35" path="res://fonts/arcadeclassic/ARCADECLASSIC.TTF" id="9_b0xsh"]
+[ext_resource type="Texture2D" uid="uid://qdxxwgq37ose" path="res://final_art/endscreenhouse.png" id="11_o8wqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ujuwj"]
 texture = ExtResource("1_4dseu")
@@ -2368,30 +2372,140 @@ layer_1/name = "Interactable"
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(2687033, 196608, 4, 2687034, 262144, 4, 1835099, 851968, 11, 1900635, 851968, 12, 1900636, 196608, 14, 1966172, 196608, 15, 1900637, 262144, 14, 1966173, 262144, 15, 1900639, 196608, 5, 1966175, 327680, 5, 1835098, 851968, 11, 1900634, 851968, 12, 1769565, 131072, 12, 1835101, 131072, 13, 1769566, 196608, 12, 1835102, 196608, 13, 1835081, 917504, 0, 1900617, 917504, 1, 1966153, 917504, 2, 1835082, 983040, 0, 1900618, 983040, 1, 1966154, 983040, 2, 1835085, 917504, 0, 1900621, 917504, 1, 1966157, 917504, 2, 1835086, 983040, 0, 1900622, 983040, 1, 1966158, 983040, 2, 1835089, 917504, 0, 1900625, 917504, 1, 1966161, 917504, 2, 1835090, 983040, 0, 1900626, 983040, 1, 1966162, 983040, 2, 1769547, 327680, 4, 1769548, 393216, 4, 1769551, 327680, 4, 1769552, 393216, 4, 2424917, 851968, 3, 2490453, 851968, 4, 2424918, 917504, 3, 2490454, 917504, 4, 2424919, 983040, 3, 2490455, 983040, 4, 2359381, 851968, 3, 2359382, 917504, 3, 2359383, 983040, 3, 2555989, 458752, 13, 2621525, 458752, 14, 2687061, 458752, 15, 2555990, 524288, 13, 2621526, 524288, 14, 2687062, 524288, 15, 2555991, 589824, 13, 2621527, 589824, 14, 2687063, 589824, 15, 1769542, 851968, 5, 1835078, 851968, 6, 1900614, 851968, 7, 1966150, 851968, 8, 1769543, 917504, 5, 1835079, 917504, 6, 1900615, 917504, 7, 1966151, 917504, 8, 852046, 0, 14, 917582, 0, 15, 852052, 65536, 14, 917588, 65536, 15, 852053, 131072, 14, 917589, 131072, 15, 852054, 851968, 11, 917590, 851968, 12, 852055, 851968, 11, 917591, 851968, 12, 917580, 65536, 5, 720980, 131072, 12, 786516, 131072, 13, 720981, 196608, 12, 786517, 196608, 13, 720973, 458752, 5, 720974, 524288, 5, 720975, 458752, 5, 720976, 524288, 5, 983124, 327680, 14, 1048660, 327680, 15, 983125, 393216, 14, 1048661, 393216, 15, 393247, 589824, 5, 458783, 589824, 6, 393248, 655360, 5, 458784, 655360, 6, 393253, 720896, 5, 458789, 720896, 6, 393254, 786432, 5, 458790, 786432, 6, 393259, 589824, 5, 458795, 589824, 6, 393260, 655360, 5, 458796, 655360, 6, 786467, 851968, 3, 852003, 851968, 3, 917539, 851968, 3, 983075, 851968, 3, 1048611, 851968, 3, 786468, 917504, 3, 852004, 917504, 3, 917540, 917504, 3, 983076, 917504, 3, 1048612, 917504, 3, 786469, 917504, 3, 852005, 917504, 3, 917541, 917504, 3, 983077, 917504, 3, 1048613, 917504, 3, 786470, 917504, 3, 852006, 917504, 3, 917542, 917504, 3, 983078, 917504, 3, 1048614, 917504, 3, 786471, 917504, 3, 852007, 917504, 3, 917543, 917504, 3, 983079, 917504, 3, 1048615, 917504, 3, 786472, 917504, 3, 852008, 917504, 3, 917544, 917504, 3, 983080, 917504, 3, 1048616, 917504, 3, 1114147, 851968, 4, 786473, 983040, 3, 852009, 983040, 3, 917545, 983040, 3, 983081, 983040, 3, 1048617, 983040, 3, 1114153, 851968, 4, 852002, 131072, 5, 983074, 131072, 5, 852010, 131072, 5, 983082, 131072, 5, 524338, 720896, 9, 589874, 720896, 10, 524339, 786432, 9, 589875, 786432, 10, 524340, 720896, 9, 589876, 720896, 10, 524341, 786432, 9, 589877, 786432, 10, 524349, 851968, 9, 589885, 851968, 10, 524350, 917504, 9, 589886, 917504, 10, 524351, 983040, 9, 589887, 983040, 10, 589878, 851968, 3, 655414, 851968, 4, 589879, 917504, 3, 655415, 917504, 4, 589880, 983040, 3, 655416, 983040, 4, 524352, 983040, 9, 589888, 983040, 10, 524354, 917504, 9, 589890, 917504, 10, 524353, 851968, 9, 589889, 851968, 10, 393267, 589824, 5, 458803, 589824, 6, 393268, 655360, 5, 458804, 655360, 6, 393271, 589824, 5, 458807, 589824, 6, 393272, 655360, 5, 458808, 655360, 6, 393275, 589824, 5, 458811, 589824, 6, 393276, 655360, 5, 458812, 655360, 6, 393279, 589824, 5, 458815, 589824, 6, 393280, 655360, 5, 458816, 655360, 6, 1179711, 983040, 11, 1245247, 983040, 12, 1179712, 983040, 11, 1245248, 983040, 12, 1179713, 983040, 11, 1245249, 983040, 12, 1179714, 983040, 11, 1245250, 983040, 12, 1245246, 851968, 11, 1179700, 983040, 5, 1245236, 983040, 6, 1245235, 131072, 5, 1245237, 131072, 5, 1835060, 262144, 10, 1835061, 327680, 10, 1835050, 262144, 10, 1900586, 262144, 11, 1835051, 327680, 10, 1900587, 327680, 11, 1900596, 262144, 11, 1900597, 327680, 11, 1835055, 131072, 10, 1900591, 131072, 11, 1835056, 196608, 10, 1900592, 196608, 11, 1703981, 458752, 3, 1703982, 524288, 3, 1703986, 458752, 3, 1703987, 524288, 3, 1638461, 589824, 3, 1638465, 720896, 4, 1703999, 655360, 4, 1769533, 589824, 4, 1769537, 720896, 3, 2162735, 458752, 13, 2228271, 458752, 14, 2293807, 458752, 15, 2162736, 524288, 13, 2228272, 524288, 14, 2293808, 524288, 15, 2162737, 589824, 13, 2228273, 589824, 14, 2293809, 589824, 15, 1769502, 851968, 5, 1835038, 851968, 6, 1900574, 851968, 7, 1966110, 851968, 8, 1769503, 917504, 5, 1835039, 917504, 6, 1900575, 917504, 7, 1966111, 917504, 8, 1769504, 851968, 5, 1835040, 851968, 6, 1900576, 851968, 7, 1966112, 851968, 8, 1769505, 917504, 5, 1835041, 917504, 6, 1900577, 917504, 7, 1966113, 917504, 8, 1769506, 851968, 5, 1835042, 851968, 6, 1900578, 851968, 7, 1966114, 851968, 8, 1769507, 917504, 5, 1835043, 917504, 6, 1900579, 917504, 7, 1966115, 917504, 8, 1900608, 851968, 3, 1966144, 851968, 4, 1900609, 917504, 3, 1966145, 917504, 4, 1900610, 983040, 3, 1966146, 983040, 4, 2621506, 851968, 11, 2687042, 851968, 12, 2621505, 851968, 11, 2687041, 851968, 12, 2621504, 851968, 11, 2687040, 851968, 12, 2031647, 983040, 7, 2031650, 983040, 7, 2162713, 0, 12, 2228249, 0, 13, 2162711, 0, 14, 2228247, 0, 15, 2228240, 983040, 11, 2228241, 983040, 11, 2228242, 983040, 11, 2162707, 65536, 14, 2228243, 65536, 15, 2162708, 131072, 14, 2228244, 131072, 15, 2031633, 327680, 4, 2031634, 393216, 4, 2031637, 458752, 5, 2031638, 524288, 5, 2031641, 458752, 5, 2031642, 524288, 5)
 
+[node name="WinScreen" type="CanvasLayer" parent="."]
+
+[node name="GotAway" type="Label" parent="WinScreen"]
+top_level = true
+visibility_layer = 512
+z_index = 4
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -298.0
+offset_top = 94.0
+offset_right = 303.0
+offset_bottom = 231.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_tji2t")
+theme_override_font_sizes/font_size = 80
+text = "YOU GOT AWAY WITH IT!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="WinScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_o8wqq")
+
+[node name="PlayAgain" type="Button" parent="WinScreen"]
+offset_left = 457.0
+offset_top = 495.0
+offset_right = 696.0
+offset_bottom = 551.0
+theme_override_fonts/font = ExtResource("9_b0xsh")
+theme_override_font_sizes/font_size = 45
+text = "Try Again?"
+
+[node name="StartScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_2408w")
+
+[node name="ColorRect" type="ColorRect" parent="StartScreen"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -343.0
+offset_top = 77.0
+offset_right = 331.0
+offset_bottom = 230.0
+grow_horizontal = 2
+color = Color(0.266667, 0.266667, 0.266667, 0.898039)
+
+[node name="Title" type="Label" parent="StartScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -13.0
+offset_right = 71.5
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_tji2t")
+theme_override_font_sizes/font_size = 72
+text = "GET AWAY WITH IT"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="StartScreen"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = 175.0
+offset_right = 118.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_b0xsh")
+theme_override_font_sizes/font_size = 72
+text = "START"
+
 [node name="EndScreen" type="CanvasLayer" parent="." groups=["HUD"]]
 layer = 3
 visible = false
 script = ExtResource("6_emjmo")
 
+[node name="TextureRect" type="TextureRect" parent="EndScreen"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_o8wqq")
+
 [node name="LabelVis" type="Node2D" parent="EndScreen"]
 position = Vector2(-2, 1)
 
-[node name="Reason" type="Label" parent="EndScreen/LabelVis"]
+[node name="ReasonColor" type="ColorRect" parent="EndScreen/LabelVis"]
+offset_left = 395.0
+offset_top = 319.0
+offset_right = 743.0
+offset_bottom = 375.0
+
+[node name="Reason" type="Label" parent="EndScreen/LabelVis/ReasonColor"]
 top_level = true
 z_index = 4
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -373.0
-offset_right = 132.0
-offset_bottom = -314.0
+offset_left = -180.0
+offset_top = -320.0
+offset_right = 181.0
+offset_bottom = -261.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("9_b0xsh")
+theme_override_font_sizes/font_size = 45
 text = "You got caught!"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -2403,38 +2517,38 @@ visible_ratio = 20.0
 top_level = true
 visibility_layer = 512
 z_index = 4
-anchors_preset = -1
-anchor_left = 0.478
-anchor_top = 0.246
-anchor_right = 0.478
-anchor_bottom = 0.246
-offset_left = -242.656
-offset_top = -35.408
-offset_right = 358.344
-offset_bottom = 101.592
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -298.0
+offset_top = 94.0
+offset_right = 303.0
+offset_bottom = 231.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_tji2t")
 theme_override_font_sizes/font_size = 100
-text = "Game Over"
+text = "GAME OVER"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="EndScreen"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 1.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 0.332399, 0.44846, 1)
-
 [node name="HUDCam" type="Camera2D" parent="EndScreen"]
 position = Vector2(280, 168)
+
+[node name="TryAgain" type="Button" parent="EndScreen"]
+offset_left = 457.0
+offset_top = 495.0
+offset_right = 696.0
+offset_bottom = 551.0
+theme_override_fonts/font = ExtResource("9_b0xsh")
+theme_override_font_sizes/font_size = 45
+text = "Try Again?"
 
 [node name="Weapon" parent="." instance=ExtResource("7_vmmw6")]
 position = Vector2(1475, 470)
 scale = Vector2(0.15, 0.15)
 
 [connection signal="timeout" from="Criminal/Timer/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="WinScreen/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="StartScreen/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="EndScreen/TryAgain" to="." method="_on_try_again_pressed"]
