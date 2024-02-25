@@ -10,13 +10,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	if overlaps_body(body1) and tamper == true: 
-		
-		$CollisionShape2D.set_deferred("disabled", true)
-		$AnimatedSprite2D.animation = "disabled"
-		get_tree().call_group("Demo", "disabled")
-		tamper = false 
+	if tamper:
+		if overlaps_body(body1): 
+			
+			$CollisionShape2D.set_deferred("disabled", true)
+			$AnimatedSprite2D.animation = "disabled"
+			get_tree().call_group("Demo", "disabled")
+			tamper = false 
 	
 
 func on_disable():
