@@ -10,7 +10,10 @@ var numCamera = 0
 @onready var disabcamera = 0
 var peoplePlaces = [Vector2(625, 325), Vector2(975, 230), Vector2(950, 515), Vector2(805, 625), 
 Vector2(645, 545), Vector2(550, 635), Vector2(330, 625), Vector2(1160, 580), Vector2(1275, 625), Vector2(1312, 300)]
-# Called when the node enters the scene tree for the first time.
+var objectPlaces = [Vector2(625, 325), Vector2(975, 230), Vector2(950, 515), Vector2(805, 625), 
+Vector2(645, 545), Vector2(550, 635), Vector2(330, 625), Vector2(1160, 580), Vector2(1275, 625), Vector2(1312, 300), Vector2(1475, 470), 
+Vector2(1325, 235), Vector2(1395, 565), Vector2(1160, 650), Vector2(730, 485), Vector2(360, 560),
+Vector2(1045, 350), Vector2(950, 180), Vector2(500, 175)]# Called when the node enters the scene tree for the first time.
 func _ready():
 	 # Replace with function body.
 	#$SubViewportContainer/EndScreen/LabelVis/Label.show()
@@ -35,10 +38,11 @@ func _ready():
 		#print("hello")
 	for i in numCamera:
 		var camera_scene_copy = camera_scene.instantiate()
-		var x = randi()%170 + 30 
-		var y = randi()%120 + 170
-		camera_scene_copy.position = Vector2(x, y)
+		#var x = randi()%170 + 30 
+		#var y = randi()%120 + 170
+		camera_scene_copy.position = objectPlaces.pick_random()
 		add_child(camera_scene_copy)
+	$Weapon.position = objectPlaces.pick_random()
 	print(numCamera)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
