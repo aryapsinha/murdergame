@@ -8,6 +8,8 @@ var numPeople = 0
 @onready var objectives = 0
 var numCamera = 0
 @onready var disabcamera = 0
+var peoplePlaces = [Vector2(625, 325), Vector2(975, 230), Vector2(950, 515), Vector2(805, 625), 
+Vector2(645, 545), Vector2(550, 635), Vector2(330, 625), Vector2(1160, 580), Vector2(1275, 625), Vector2(1312, 300)]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	 # Replace with function body.
@@ -22,11 +24,11 @@ func _ready():
 	$Criminal/MainCam.make_current() #Change this if a start scene is added
 	for i in numPeople:
 		var enemy_scene_copy = enemy_scene.instantiate()
-		var x = randi() % 150 + 350
-		print(x)
-		var y = randi()% 100 + 175
-		print(y)
-		enemy_scene_copy.position = Vector2(x, y)
+		#var x = randi() % peoplePlaces.size()
+		#print(x)
+		#var y = randi()% 100 + 175
+		#print(y)
+		enemy_scene_copy.position = peoplePlaces.pick_random()
 		#var hud = $EndScreen.new()
 		#enemy_scene_copy.connect("gameover", hud._on_people_gameover())
 		add_child(enemy_scene_copy)
