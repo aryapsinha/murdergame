@@ -16,6 +16,7 @@ Vector2(1325, 235), Vector2(1395, 565), Vector2(1160, 650), Vector2(730, 485), V
 Vector2(1045, 350), Vector2(950, 180), Vector2(500, 175)]# Called when the node enters the scene tree for the first time.
 func _ready():
 	$StartScreen.show()
+	$Instructions.hide()
 	$EndScreen.hide()
 	$Criminal.hide()
 	$Level0.hide()
@@ -108,7 +109,7 @@ func game_start():
 
 func _on_start_pressed():
 	$StartScreen.hide()
-	game_start() # Replace with function body.
+	$Instructions.show() # Replace with function body.
 
 
 func _on_try_again_pressed():
@@ -120,4 +121,9 @@ func _on_play_again_pressed():
 	$WinScreen.hide()
 	get_tree().call_group("People", "reset")
 	get_tree().call_group("Camera", "reset")
+	game_start() # Replace with function body.
+
+
+func _on_begin_pressed():
+	$Instructions.hide()
 	game_start() # Replace with function body.

@@ -1,24 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://d108c1aieg57l"]
 
-[ext_resource type="Texture2D" uid="uid://ccd42m37c0dsl" path="res://replace_art/pplwalk_1.png" id="1_lstjr"]
 [ext_resource type="Script" path="res://people.gd" id="1_moal1"]
-[ext_resource type="Texture2D" uid="uid://bpig6210bqlan" path="res://replace_art/pplwalk_2.png" id="2_ny2ej"]
+[ext_resource type="Texture2D" uid="uid://dasewq5itgfrh" path="res://final_art/civlegout.png" id="2_xxm5i"]
+[ext_resource type="Texture2D" uid="uid://bhw7045lrvd" path="res://final_art/civstandingreal.png" id="3_jgrr4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dl7f"]
-size = Vector2(176.667, 133.333)
+size = Vector2(96.6667, 133.333)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_56kkw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_lstjr")
+"texture": ExtResource("2_xxm5i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_ny2ej")
+"texture": ExtResource("3_jgrr4")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="People" type="Area2D" groups=["People"]]
@@ -29,13 +29,14 @@ collision_mask = 17
 script = ExtResource("1_moal1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(185, -60)
+position = Vector2(181.667, -60)
 shape = SubResource("RectangleShape2D_4dl7f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(185.5, -59.8333)
-scale = Vector2(1.01282, 0.997512)
+scale = Vector2(1.5, 1.478)
 sprite_frames = SubResource("SpriteFrames_56kkw")
+frame_progress = 0.869176
 
 [node name="WalkTime" type="Timer" parent="."]
 wait_time = 1.5

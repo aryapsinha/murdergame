@@ -1,7 +1,7 @@
 extends Area2D
 @export var enemy_scene: PackedScene
 var entered = 0; 
-var dir = -1
+var dir = 1
 var attack = false
 signal gameover
 
@@ -12,6 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$AnimatedSprite2D.play()
 	position.x += dir * 0.25
 
 
@@ -44,7 +45,7 @@ func _on_body_exited(body):
 
 func _on_walk_time_timeout():
 	dir = dir * -1
-	$AnimatedSprite2D.flip_h = dir > 0
+	$AnimatedSprite2D.flip_h = dir < 0
 	
 	$WalkTime.start() # Replace with function body.
 
