@@ -11,7 +11,7 @@ var numCamera = 0
 var peoplePlaces = [Vector2(625, 325), Vector2(975, 230), Vector2(950, 515), Vector2(805, 625), 
 Vector2(645, 545), Vector2(550, 635), Vector2(330, 625), Vector2(1160, 580), Vector2(1275, 625), Vector2(1312, 300)]
 var objectPlaces = [Vector2(625, 325), Vector2(975, 230), Vector2(950, 515), Vector2(805, 625), 
-Vector2(645, 545), Vector2(550, 635), Vector2(330, 625), Vector2(1160, 580), Vector2(1275, 625), Vector2(1312, 300), Vector2(1475, 470), 
+Vector2(645, 545), Vector2(550, 635), Vector2(330, 625), Vector2(1160, 580), Vector2(1275, 625), Vector2(1312, 300),  
 Vector2(1325, 235), Vector2(1395, 565), Vector2(1160, 650), Vector2(730, 485), Vector2(360, 560),
 Vector2(1045, 350), Vector2(950, 180), Vector2(500, 175)]# Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,7 +26,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timeLabel.text = "%02d:%02d" % three_min()
-	if(objectives == 3 and $Criminal.position == Vector2(936, 677)):
+	
+	if(objectives == 3 and $Placemat.overlaps_body($Criminal)):
+		# '''''
 		win()
 
 func three_min():
@@ -38,23 +40,26 @@ func three_min():
 func win(): 
 	$WinScreen.show()
 	print("called")
-	$PlayAgain.hide()
+	$WinScreen/PlayAgain.hide()
 
 func killed():
 	killcount = killcount + 1
 	print(killcount)
 	if(killcount == numPeople):
+		objectives = objectives +1 
 		print("truth")
 		get_tree().call_group("MainChar", "killAll")
 func disabled():
 	disabcamera = disabcamera + 1
 	if(disabcamera == numCamera):
+		objectives = objectives + 1
 		print("cameraTruth")
 		get_tree().call_group("MainChar", "disableAll")
 func _on_timer_timeout():
 	$Criminal.hide()
 	get_tree().call_group("HUD", "_on_people_gameover") 
-
+func objectInc():
+	objectives = objectives + 1
 func game_start():
 	
 	
