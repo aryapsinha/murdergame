@@ -2278,7 +2278,6 @@ sources/1 = SubResource("TileSetAtlasSource_uim6q")
 script = ExtResource("1_klwaf")
 
 [node name="Criminal" parent="." instance=ExtResource("1_p1xug")]
-visible = false
 z_index = 2
 position = Vector2(936, 677)
 
@@ -2429,7 +2428,6 @@ theme_override_font_sizes/font_size = 45
 text = "Try Again?"
 
 [node name="StartScreen" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="StartScreen"]
 anchors_preset = 15
@@ -2485,6 +2483,7 @@ theme_override_font_sizes/font_size = 72
 text = "START"
 
 [node name="Instructions" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Instructions"]
 anchors_preset = 15
