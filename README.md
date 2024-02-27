@@ -1,5 +1,5 @@
 <Center></Center>
-<h1>Get Away With It?</h1>
+<h1>Get Away With It</h1>
 <h2>Play the game here: https://aryapsinha.itch.io/get-away-with-it</h2>
 
 <h3>Project Description</h3>
